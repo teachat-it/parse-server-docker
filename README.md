@@ -1,3 +1,3 @@
 # Parse-server-docker
 
-Includes moment, `quickblox` and `underscore` as `dependencies`.
+Includes `moment`, `quickblox` and `underscore` as dependencies.

@@ -21,7 +21,7 @@
     "parse-server-azure-storage": "^1.1.0",
     "moment" : "^2.14.1",
     "quickblox" : "^2.1.4",
-    "underscorse" : "^1.8.3"
+    "underscore" : "^1.8.3"
   },
   "scripts": {
     "start": "nodemon --watch /parse/cloud index.js"

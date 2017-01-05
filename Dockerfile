@@ -1,8 +1,9 @@
 FROM node:5
 
+RUN mkdir -p /parse
+
 ADD package.json /parse
 ADD jsconfig.json /parse
-ADD cloud/*.js /parse/cloud
 
 WORKDIR /parse
 
