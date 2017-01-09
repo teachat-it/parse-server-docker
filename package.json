@@ -17,7 +17,7 @@
     "mongodb": "2.1.18",
     "nodemon": "^1.8.1",
     "parse": "~1.8.0",
-    "parse-server": "2.2.22",
+    "parse-server": "2.3.2",
     "parse-server-azure-storage": "^1.1.0",
     "moment" : "^2.14.1",
     "quickblox" : "^2.1.4",
