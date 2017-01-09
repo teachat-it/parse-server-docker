@@ -112,7 +112,7 @@ if (iosPushConfigs.length > 0) {
     pushConfig.ios = iosPushConfigs;
     //console.log('Multiple iOS push configurations.')
 }
-console.log(pushConfig);
+console.log('Push configuration: '+pushConfig);
 
 var port = process.env.PORT || 1337;
 // Serve the Parse API on the /parse URL prefix
@@ -173,9 +173,9 @@ if (!emailModule) {
         }
     };
 }
-console.log(verifyUserEmails);
-console.log(emailModule);
-console.log(emailAdapter);
+console.log('Verify user emails: '+verifyUserEmails);
+console.log('Email module: '+emailModule);
+console.log('Email adapter: '+emailAdapter);
 
 var enableAnonymousUsers = !!+(process.env.ENABLE_ANON_USERS);
 var allowClientClassCreation = !!+(process.env.ALLOW_CLIENT_CLASS_CREATION);
