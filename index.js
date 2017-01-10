@@ -112,7 +112,7 @@ if (iosPushConfigs.length > 0) {
     pushConfig.ios = iosPushConfigs;
     //console.log('Multiple iOS push configurations.')
 }
-console.log('Push configuration: '+pushConfig);
+console.log('Push configuration: '+JSON.stringify(pushConfig));
 
 var port = process.env.PORT || 1337;
 // Serve the Parse API on the /parse URL prefix
