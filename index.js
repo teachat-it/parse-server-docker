@@ -219,6 +219,8 @@ if(process.env.PASSWORD_RESET_SUCCESS_PAGE) {
     customPages.passwordResetSuccess = process.env.PASSWORD_RESET_SUCCESS_PAGE;
 }
 
+console.log('Custom pages: '+JSON.stringify(customPages));
+
 var api = new ParseServer({
     databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
     databaseOptions: databaseOptions,
