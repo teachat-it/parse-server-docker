@@ -175,7 +175,7 @@ if (!emailModule) {
 }
 console.log('Verify user emails: '+verifyUserEmails);
 console.log('Email module: '+emailModule);
-console.log('Email adapter: '+emailAdapter);
+console.log('Email adapter: '+JSON.stringify(emailAdapter));
 
 var enableAnonymousUsers = !!+(process.env.ENABLE_ANON_USERS);
 var allowClientClassCreation = !!+(process.env.ALLOW_CLIENT_CLASS_CREATION);
