@@ -202,6 +202,23 @@ if (process.env.DATABASE_TIMEOUT) {
     };
 }
 
+var customPages = {}
+if(process.env.VERIFY_EMAIL_SUCCESS_PAGE) {
+    customPages.verifyEmailSuccess = process.env.VERIFY_EMAIL_SUCCESS_PAGE;
+}
+
+if(process.env.INVALID_LINK_PAGE) {
+    customPages.invalidLink = process.env.INVALID_LINK_PAGE;
+}
+
+if(process.env.CHOOSE_PASSWORD_PAGE) {
+    customPages.choosePassword = process.env.CHOOSE_PASSWORD_PAGE;
+}
+
+if(process.env.PASSWORD_RESET_SUCCESS_PAGE) {
+    customPages.passwordResetSuccess = process.env.PASSWORD_RESET_SUCCESS_PAGE;
+}
+
 var api = new ParseServer({
     databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
     databaseOptions: databaseOptions,
@@ -229,7 +246,8 @@ var api = new ParseServer({
     //oauth = {},
     appName: process.env.APP_NAME,
     publicServerURL: process.env.PUBLIC_SERVER_URL,
-    liveQuery: liveQueryParam
+    liveQuery: liveQueryParam,
+    customPages: customPages
     //customPages: process.env.CUSTOM_PAGES || // {
     //invalidLink: undefined,
     //verifyEmailSuccess: undefined,
