@@ -162,6 +162,7 @@ var emailModule = process.env.EMAIL_MODULE;
 var verifyUserEmails = !!+(process.env.VERIFY_USER_EMAILS);
 var emailAdapter;
 if (!emailModule) {
+    console.log('No email module configured - Forcing verifyUserEmails to false');
     verifyUserEmails = false;
 } else {
     emailAdapter = {
