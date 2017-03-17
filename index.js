@@ -161,9 +161,11 @@ if (process.env.S3_ACCESS_KEY &&
 var emailModule = process.env.EMAIL_MODULE;
 var verifyUserEmails = 'true' === process.env.VERIFY_USER_EMAILS;
 var emailAdapter;
+var preventLoginWithUnverifiedEmail = 'true' === process.env.PREVENT_LOGIN_UNVERIFIED_EMAIL;
 if (!emailModule) {
     console.log('No email module configured - Forcing verifyUserEmails to false');
     verifyUserEmails = false;
+    preventLoginWithUnverifiedEmail = false;
 } else {
     emailAdapter = {
         module: emailModule,
@@ -245,6 +247,7 @@ var api = new ParseServer({
     emailAdapter: emailAdapter,
     enableAnonymousUsers: enableAnonymousUsers,
     allowClientClassCreation: allowClientClassCreation,
+    preventLoginWithUnverifiedEmail: preventLoginWithUnverifiedEmail,
     //oauth = {},
     appName: process.env.APP_NAME,
     publicServerURL: process.env.PUBLIC_SERVER_URL,
