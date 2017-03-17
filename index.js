@@ -169,11 +169,7 @@ if (!emailModule) {
 } else {
     emailAdapter = {
         module: emailModule,
-        options: {
-            fromAddress: process.env.EMAIL_FROM,
-            domain: process.env.EMAIL_DOMAIN,
-            apiKey: process.env.EMAIL_API_KEY
-        }
+        options: process.env.EMAIL_OPTIONS
     };
 }
 console.log('Verify user emails: '+verifyUserEmails);
