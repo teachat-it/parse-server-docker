@@ -127,7 +127,7 @@ var filesAdapter;
 if (process.env.S3_ACCESS_KEY &&
     process.env.S3_SECRET_KEY &&
     process.env.S3_BUCKET) {
-    var directAccess = !!+(process.env.S3_DIRECT);
+    var directAccess = 'true' === process.env.S3_DIRECT;
 
     filesAdapter = new S3Adapter(
         process.env.S3_ACCESS_KEY,
@@ -137,7 +137,7 @@ if (process.env.S3_ACCESS_KEY &&
 } else if (process.env.GCP_PROJECT_ID &&
     process.env.GCP_KEYFILE_PATH &&
     process.env.GCS_BUCKET) {
-    var directAccess = !!+(process.env.GCS_DIRECT);
+    var directAccess = 'true' === process.env.GCS_DIRECT;
 
     filesAdapter = new GCSAdapter(
         process.env.GCP_PROJECT_ID,
@@ -147,7 +147,7 @@ if (process.env.S3_ACCESS_KEY &&
 } else if (process.env.AZURE_ACCOUNT &&
     process.env.AZURE_CONTAINER &&
     process.env.AZURE_ACCESS_KEY) {
-    var directAccess = !!+(process.env.AZURE_DIRECT);
+    var directAccess = 'true' === process.env.AZURE_DIRECT;
 
     filesAdapter = new AzureStorageAdapter(
         process.env.AZURE_ACCOUNT,
@@ -159,7 +159,7 @@ if (process.env.S3_ACCESS_KEY &&
 }
 
 var emailModule = process.env.EMAIL_MODULE;
-var verifyUserEmails = !!+(process.env.VERIFY_USER_EMAILS);
+var verifyUserEmails = 'true' === process.env.VERIFY_USER_EMAILS;
 var emailAdapter;
 if (!emailModule) {
     console.log('No email module configured - Forcing verifyUserEmails to false');
@@ -178,8 +178,8 @@ console.log('Verify user emails: '+verifyUserEmails);
 console.log('Email module: '+emailModule);
 console.log('Email adapter: '+JSON.stringify(emailAdapter));
 
-var enableAnonymousUsers = !!+(process.env.ENABLE_ANON_USERS);
-var allowClientClassCreation = !!+(process.env.ALLOW_CLIENT_CLASS_CREATION);
+var enableAnonymousUsers = 'true' === process.env.ENABLE_ANON_USERS;
+var allowClientClassCreation = 'true' === process.env.ALLOW_CLIENT_CLASS_CREATION;
 
 var liveQuery = process.env.LIVEQUERY_SUPPORT;
 console.log("LIVEQUERY_SUPPORT: " + liveQuery);
