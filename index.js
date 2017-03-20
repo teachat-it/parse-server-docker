@@ -162,6 +162,10 @@ var emailModule = process.env.EMAIL_MODULE;
 var verifyUserEmails = 'true' === process.env.VERIFY_USER_EMAILS;
 var emailAdapter;
 var preventLoginWithUnverifiedEmail = 'true' === process.env.PREVENT_LOGIN_UNVERIFIED_EMAIL;
+var emailOptions;
+if (process.env.EMAIL_OPTIONS) {
+    emailOptions = JSON.parse(process.env.EMAIL_OPTIONS);
+}
 if (!emailModule) {
     console.log('No email module configured - Forcing verifyUserEmails to false');
     verifyUserEmails = false;
@@ -169,7 +173,7 @@ if (!emailModule) {
 } else {
     emailAdapter = {
         module: emailModule,
-        options: process.env.EMAIL_OPTIONS
+        options: emailOptions
     };
 }
 console.log('Verify user emails: '+verifyUserEmails);
