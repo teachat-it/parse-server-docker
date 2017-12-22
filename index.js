@@ -197,6 +197,14 @@ if(liveQuery) {
     };
 }
 
+var userSensitiveFields;
+if (process.env.USER_SENSITIVE_FIELDS){
+    userSensitiveFields = process.env.USER_SENSITIVE_FIELDS.split(',').map(function(entry) {
+        return entry.trim();
+    });
+    console.log("USER_SENSITIVE_FIELDS: " + userSensitiveFields);
+}
+
 var databaseOptions = {};
 if (process.env.DATABASE_TIMEOUT) {
     databaseOptions = {
@@ -252,7 +260,8 @@ var api = new ParseServer({
     appName: process.env.APP_NAME,
     publicServerURL: process.env.PUBLIC_SERVER_URL,
     liveQuery: liveQueryParam,
-    customPages: customPages
+    customPages: customPages,
+    userSensitiveFields: userSensitiveFields
     //customPages: process.env.CUSTOM_PAGES || // {
     //invalidLink: undefined,
     //verifyEmailSuccess: undefined,
