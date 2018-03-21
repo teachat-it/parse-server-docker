@@ -16,7 +16,7 @@
     "kerberos": "~0.0.x",
     "mongodb": "2.1.18",
     "parse": "~1.8.0",
-    "parse-server": "2.3.2",
+    "parse-server": "^2.7.4",
     "parse-server-azure-storage": "^1.1.0",
     "parse-server-mailgun-adapter-template": "^1.1.7",
     "moment" : "^2.14.1",
